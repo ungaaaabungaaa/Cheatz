@@ -1,37 +1,14 @@
 "use client";
-
-import { useEffect, useState } from "react";
-
-import { getStudentPhrases } from "./helpers/title";
 import PromptInputFullLineWithBottomActions from "./ui/promtinput/prompt-input-full-line-with-bottom-actions";
 
 export default function Home() {
-  const [phrase, setPhrase] = useState<string>("");
-
-  useEffect(() => {
-    // Check if we have a phrase stored in session storage
-    const storedPhrase = sessionStorage.getItem("studentPhrase");
-
-    if (storedPhrase) {
-      // Use the stored phrase
-      setPhrase(storedPhrase);
-    } else {
-      // Generate a new phrase and store it
-      const newPhrase = getStudentPhrases();
-
-      sessionStorage.setItem("studentPhrase", newPhrase);
-      setPhrase(newPhrase);
-    }
-  }, []);
-
   return (
-    <section className="flex flex-col items-center justify-center text-center">
+    <section className="flex flex-col items-center text-center min-h-[80vh] pt-20">
         <div className="flex w-full max-w-xl flex-col items-center">
           <div className="flex w-full flex-col gap-4">
             <PromptInputFullLineWithBottomActions />
           </div>
         </div>
-  
     </section>
   );
 }

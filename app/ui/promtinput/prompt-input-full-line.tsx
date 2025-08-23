@@ -2,9 +2,13 @@
 
 import {Icon} from "@iconify/react";
 import React, {useCallback, useState} from "react";
-import {Badge, Button, cn, Form, Image, Tooltip} from "@heroui/react";
+import {Badge} from "@heroui/badge";
+import {Button} from "@heroui/button";
+import {Form} from "@heroui/form";
+import {Image} from "@heroui/image";
+import {Tooltip} from "@heroui/tooltip";
 import {VisuallyHidden} from "@react-aria/visually-hidden";
-
+import {cn} from "@/lib/utils";
 import PromptInput from "./prompt-input";
 
 interface PromptInputProps {

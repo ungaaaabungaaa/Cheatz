@@ -1,7 +1,7 @@
 "use client";
 
 import React, {useState} from "react";
-import {Button} from "@heroui/react";
+import {Button} from "@heroui/button";
 import {Icon} from "@iconify/react";
 
 import {PromptInputFullLineComponent} from "./prompt-input-full-line";
