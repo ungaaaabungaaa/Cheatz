@@ -8,25 +8,23 @@ import { PromptInputFullLineComponent } from "./prompt-input-full-line";
 // Define suggestion lists for each category
 const suggestionLists = {
   leakedPapers: [
-    "Last-Minute Qs Leak",
-    "Exam Papers Chahiye?",
     "Teacher LeakedPapers",
+    "Last-Minute Qs Leak",
+    "AI Predicted Papers",
+    "Last-Minute Exam Lifesavers",
   ],
   cheatSheets: [
-    "Quick Formula List",
     "Micro Xerox",
     "Exam Cheats Ready",
+    "Quick Formula List",
     "Last-Minute Notes",
   ],
   assignments: [
     "Student's Who Can Do Assignments",
-    "Assignment Dealers",
-    "Assignment Black Market",
+    "Assignment Stationary Shop's",
   ],
   scolarship: [
-    "Scholarships = Less Fees, More Chai",
     "No BullShit Scholarship Links",
-    "Click Here, Save Money",
   ],
   projects: [
     "Buy a Ready-Made Project",
