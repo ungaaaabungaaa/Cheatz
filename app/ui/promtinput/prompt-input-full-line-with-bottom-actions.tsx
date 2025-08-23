@@ -1,42 +1,84 @@
 "use client";
-import React from "react";
-import PromptInputFullLine from "./prompt-input-full-line";
-import { useEffect, useState } from "react";
-import { getStudentPhrases } from "../../helpers/title";
 
+import React, {useState} from "react";
+import {Button} from "@heroui/react";
+import {Icon} from "@iconify/react";
 
+import {PromptInputFullLineComponent} from "./prompt-input-full-line";
 
-export default function Component() {
+const suggestions = [
+  {
+    id: "draft-email",
+    label: "Draft an email",
+    icon: "solar:document-add-outline",
+  },
+  {
+    id: "create-image",
+    label: "Create an image",
+    icon: "solar:gallery-linear",
+  },
+  {
+    id: "brainstorm",
+    label: "Brainstorm",
+    icon: "solar:lightbulb-linear",
+  },
+  {
+    id: "make-plan",
+    label: "Make a plan",
+    icon: "solar:checklist-linear",
+  },
+  {
+    id: "code",
+    label: "Code",
+    icon: "solar:code-linear",
+  },
+  {
+    id: "help-write",
+    label: "Help me write",
+    icon: "solar:pen-2-outline",
+  },
+  {
+    id: "get-advice",
+    label: "Get advice",
+    icon: "solar:square-academic-cap-2-outline",
+  },
+];
 
-  const [phrase, setPhrase] = useState<string>("");
+type PromptSuggestion = (typeof suggestions)[number];
 
-  useEffect(() => {
-    // Check if we have a phrase stored in session storage
-    const storedPhrase = sessionStorage.getItem("studentPhrase");
+interface PromptSuggestionsProps {
+  onSelect?: (suggestion: PromptSuggestion) => void;
+}
 
-    if (storedPhrase) {
-      // Use the stored phrase
-      setPhrase(storedPhrase);
-    } else {
-      // Generate a new phrase and store it
-      const newPhrase = getStudentPhrases();
-
-      sessionStorage.setItem("studentPhrase", newPhrase);
-      setPhrase(newPhrase);
-    }
-  }, []);
+const PromptSuggestions = ({onSelect}: PromptSuggestionsProps) => {
   return (
-    <div className="flex h-screen max-h-[calc(100vh-140px)] w-full">
-      <div className="flex h-full w-full items-center justify-center">
-        <div className="flex w-full max-w-xl flex-col items-center gap-4 lg:gap-8">
-          <h1 className="text-default-foreground text-xl  lg:text-3xl leading-9 font-semibold">
-            {phrase}
-          </h1>
-          <div className="flex w-full flex-col gap-4">
-            <PromptInputFullLine />
-          </div>
-        </div>
-      </div>
+    <div className="flex flex-row flex-wrap items-center justify-center gap-2">
+      {suggestions.map((suggestion) => (
+        <Button
+          key={suggestion.id}
+          className="border-default-200 text-default-foreground hover:border-default-400 hover:text-foreground data-[hover=true]:border-default-400 data-[hover=true]:text-foreground h-8 gap-2 rounded-full border-1 px-3 transition-colors duration-150!"
+          startContent={<Icon className="text-default-500" icon={suggestion.icon} width={18} />}
+          variant="light"
+          onPress={() => onSelect?.(suggestion)}
+        >
+          {suggestion.label}
+        </Button>
+      ))}
+    </div>
+  );
+};
+
+export default function PromptInputFullLineWithBottomActions() {
+  const [prompt, setPrompt] = useState("");
+
+  const handleSuggestionSelect = (suggestion: PromptSuggestion) => {
+    setPrompt(`Help me ${suggestion.label.toLowerCase()}`);
+  };
+
+  return (
+    <div className="flex w-full flex-col gap-4">
+      <PromptInputFullLineComponent prompt={prompt} setPrompt={setPrompt} />
+      <PromptSuggestions onSelect={handleSuggestionSelect} />
     </div>
   );
 }
