@@ -18,7 +18,11 @@ const suggestionLists = {
     "Exam Cheats Ready",
     "Last-Minute Notes",
   ],
-  assignments: ["Assignment Dealers", "Assignment Black Market"],
+  assignments: [
+    "Student's Who Can Do Assignments",
+    "Assignment Dealers",
+    "Assignment Black Market",
+  ],
   scolarship: [
     "Scholarships = Less Fees, More Chai",
     "No BullShit Scholarship Links",
@@ -52,25 +56,25 @@ const suggestions = [
   },
   {
     id: "assignments",
-    label: "Assignment",
+    label: "Hate Assignment's",
     icon: "material-symbols:assignment-outline",
     color: "text-blue-500",
   },
   {
     id: "scolarship",
-    label: "Scolarship",
+    label: "Need Scolarship Money",
     icon: "material-symbols:school-outline",
     color: "text-emerald-500",
   },
   {
     id: "projects",
-    label: "projects",
+    label: "Hate Project's",
     icon: "material-symbols:work-outline",
     color: "text-orange-500",
   },
   {
     id: "jobs",
-    label: "jobs",
+    label: "No Job ?",
     icon: "material-symbols:work-outline",
     color: "text-yellow-500",
   },
