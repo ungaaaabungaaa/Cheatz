@@ -36,6 +36,8 @@ const suggestionLists = {
     "Walk in interview's",
     "Shortcut Agencies To Get A Job",
     "Pay Someone To Crack Interview",
+    "Crack Exam & Get Job",
+    "Do a Course & Get Job",
   ],
 };
 
