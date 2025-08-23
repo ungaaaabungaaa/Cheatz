@@ -6,8 +6,8 @@ import {Badge} from "@heroui/badge";
 import {Button} from "@heroui/button";
 import {Form} from "@heroui/form";
 import {Image} from "@heroui/image";
-import {Tooltip} from "@heroui/tooltip";
 import {VisuallyHidden} from "@react-aria/visually-hidden";
+import {AudioLines} from "lucide-react";
 import {cn} from "@/lib/utils";
 import PromptInput from "./prompt-input";
 
@@ -137,7 +137,7 @@ export function PromptInputFullLineComponent({prompt, setPrompt}: PromptInputPro
     <>
    
     <Form
-      className="rounded-medium bg-default-100 dark:bg-default-100 flex w-full flex-col items-start gap-0"
+      className="rounded-medium shadow-sm bg-default-100 dark:bg-default-100 flex w-full flex-col items-start gap-0"
       validationBehavior="native"
       onSubmit={onSubmit}
     >
@@ -153,8 +153,8 @@ export function PromptInputFullLineComponent({prompt, setPrompt}: PromptInputPro
         ref={inputRef}
         classNames={{
           innerWrapper: "relative",
-          input: "text-medium h-auto w-full",
-          inputWrapper:
+          input: "text-lg lg:text-2xl font-medium h-auto w-full",
+          inputWrapper: 
             "bg-transparent! shadow-none group-data-[focus-visible=true]:ring-0 group-data-[focus-visible=true]:ring-offset-0 pr-3 pl-[20px] pt-3 pb-4",
         }}
         maxRows={16}
@@ -168,43 +168,46 @@ export function PromptInputFullLineComponent({prompt, setPrompt}: PromptInputPro
         onValueChange={setPrompt}
       />
       <div className="flex w-full flex-row items-center justify-between px-3 pb-3">
-        <Tooltip showArrow content="Attach Files">
-          <Button
-            isIconOnly
-            radius="full"
-            size="sm"
-            variant="light"
-            onPress={() => fileInputRef.current?.click()}
-          >
-            <Icon className="text-default-500" icon="solar:paperclip-outline" width={24} />
-            <VisuallyHidden>
-              <input
-                ref={fileInputRef}
-                multiple
-                accept="image/*"
-                type="file"
-                onChange={handleFileUpload}
-              />
-            </VisuallyHidden>
-          </Button>
-        </Tooltip>
         <Button
-          isIconOnly
+          radius="full"
+          size="sm"
+          variant="bordered"
+          className="bg-transparent border-1 rounded-full py-1"
+          onPress={() => fileInputRef.current?.click()}
+        >
+          <Icon className="text-default-500" icon="solar:paperclip-outline" width={16} />
+          <span className="text-default-500 text-sm ml-1">Attach</span>
+          <VisuallyHidden>
+            <input
+              ref={fileInputRef}
+              multiple
+              accept="image/*"
+              type="file"
+              onChange={handleFileUpload}
+            />
+          </VisuallyHidden>
+        </Button>
+        <Button
           color={!prompt ? "default" : "primary"}
           isDisabled={!prompt}
           radius="full"
           size="sm"
           type="submit"
           variant="solid"
+          className="py-1"
         >
-          <Icon
+          <AudioLines
             className={cn(
-              "[&>path]:stroke-[2px]",
+              "w-4 h-4",
               !prompt ? "text-default-600" : "text-primary-foreground",
             )}
-            icon="solar:arrow-up-linear"
-            width={20}
           />
+          <span className={cn(
+            "text-sm ml-1",
+            !prompt ? "text-default-600" : "text-primary-foreground",
+          )}>
+            I’m Fucke’d
+          </span>
         </Button>
       </div>
     </Form>
@@ -214,6 +217,15 @@ export function PromptInputFullLineComponent({prompt, setPrompt}: PromptInputPro
 
 export default function PromptInputFullLine() {
   const [prompt, setPrompt] = React.useState<string>("");
+  const [isMounted, setIsMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // or a loading skeleton
+  }
 
   return <PromptInputFullLineComponent prompt={prompt} setPrompt={setPrompt} />;
 }
