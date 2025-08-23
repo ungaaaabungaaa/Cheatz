@@ -1,11 +1,13 @@
 "use client";
-
+import React from "react";
+import PromptInputFullLine from "./prompt-input-full-line";
 import { useEffect, useState } from "react";
+import { getStudentPhrases } from "../../helpers/title";
 
-import { getStudentPhrases } from "./helpers/title";
-import PromptInputFullLineWithBottomActions from "./ui/promtinput/prompt-input-full-line-with-bottom-actions";
 
-export default function Home() {
+
+export default function Component() {
+
   const [phrase, setPhrase] = useState<string>("");
 
   useEffect(() => {
@@ -23,15 +25,18 @@ export default function Home() {
       setPhrase(newPhrase);
     }
   }, []);
-
   return (
-    <section className="flex flex-col items-center justify-center text-center">
-        <div className="flex w-full max-w-xl flex-col items-center">
+    <div className="flex h-screen max-h-[calc(100vh-140px)] w-full">
+      <div className="flex h-full w-full items-center justify-center">
+        <div className="flex w-full max-w-xl flex-col items-center gap-4 lg:gap-8">
+          <h1 className="text-default-foreground text-xl  lg:text-3xl leading-9 font-semibold">
+            {phrase}
+          </h1>
           <div className="flex w-full flex-col gap-4">
-            <PromptInputFullLineWithBottomActions />
+            <PromptInputFullLine />
           </div>
         </div>
-  
-    </section>
+      </div>
+    </div>
   );
 }
