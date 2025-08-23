@@ -22,9 +22,9 @@ export default function Home() {
   }, []);
   return (
     <section className="flex flex-col items-center justify-center text-center min-h-screen w-full">
-        <div className="flex w-full lg:max-w-3xl flex-col items-center p-4">
+        <div className="flex w-full lg:max-w-5xl flex-col items-center p-4">
           <div className="flex w-full flex-col gap-4">
-            <h1 className="text-2xl lg:text-4xl text-center font-bold mb-2 lg:mb-4">{phrase}</h1>
+            <h1 className="text-4xl lg:text-6xl text-center font-bold mb-2 lg:mb-4">{phrase}</h1>
             <PromptInputFullLineWithBottomActions />
           </div>
         </div>

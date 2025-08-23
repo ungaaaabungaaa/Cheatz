@@ -33,7 +33,7 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
-            <p className="font-bold text-xl lg:text-2xl text-inherit">Exam.Sucks</p>
+            <p className="font-bold text-xl md:text-2xl lg:text-4xl text-inherit">Exam.Sucks</p>
           </NextLink>
         </NavbarBrand>
       </NavbarContent>
@@ -44,7 +44,7 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
         </NavbarItem>
       </NavbarContent>
 
