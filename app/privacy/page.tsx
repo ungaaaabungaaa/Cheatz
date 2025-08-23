@@ -63,17 +63,20 @@ export default function PrivacyPage() {
                   We don&apos;t sell your personal info to sketchy third parties
                 </li>
                 <li>
-                  We don&apos;t stalk your social media (we have better things to do)
+                  We don&apos;t stalk your social media (we have better things
+                  to do)
                 </li>
                 <li>
-                  We don&apos;t share your study data with your teachers (unless you
-                  want us to)
+                  We don&apos;t share your study data with your teachers (unless
+                  you want us to)
                 </li>
                 <li>
-                  We don&apos;t use your data for anything unrelated to education
+                  We don&apos;t use your data for anything unrelated to
+                  education
                 </li>
                 <li>
-                  We don&apos;t keep your data forever (we&apos;re not digital hoarders)
+                  We don&apos;t keep your data forever (we&apos;re not digital
+                  hoarders)
                 </li>
               </ul>
             </section>
@@ -85,9 +88,9 @@ export default function PrivacyPage() {
               <p className="leading-relaxed">
                 Our AI learns from your study patterns to make better
                 predictions. It&apos;s like having a study buddy who remembers
-                everything you&apos;ve ever studied. The more you use our platform,
-                the smarter it gets - and the better it helps you and other
-                students.
+                everything you&apos;ve ever studied. The more you use our
+                platform, the smarter it gets - and the better it helps you and
+                other students.
               </p>
             </section>
 
@@ -110,7 +113,8 @@ export default function PrivacyPage() {
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>You can see what data we have about you</li>
                 <li>
-                  You can ask us to delete your data (we&apos;ll miss you though)
+                  You can ask us to delete your data (we&apos;ll miss you
+                  though)
                 </li>
                 <li>You can update your information anytime</li>
                 <li>You can opt out of emails and notifications</li>
@@ -138,9 +142,9 @@ export default function PrivacyPage() {
               </h3>
               <p className="leading-relaxed">
                 We might update this privacy policy from time to time. When we
-                do, we&apos;ll let you know. We won&apos;t sneak changes in like a ninja -
-                we&apos;re more like a friendly neighbor who knocks on your door to
-                say hi.
+                do, we&apos;ll let you know. We won&apos;t sneak changes in like
+                a ninja - we&apos;re more like a friendly neighbor who knocks on
+                your door to say hi.
               </p>
             </section>
 
@@ -150,8 +154,8 @@ export default function PrivacyPage() {
               </h3>
               <p className="leading-relaxed">
                 Questions about your privacy? Want to exercise your data rights?
-                Just want to chat? Reach out to us! We&apos;re real humans who care
-                about your privacy and are happy to help.
+                Just want to chat? Reach out to us! We&apos;re real humans who
+                care about your privacy and are happy to help.
               </p>
             </section>
           </div>

@@ -8,8 +8,8 @@ export default function TermsPage() {
             WTF @RE YOU DO!NG HERE?
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 dark:text-gray-600 font-medium mb-4">
-            Reading terms and conditions? <br /> You&apos;re either really bored or
-            really responsible.
+            Reading terms and conditions? <br /> You&apos;re either really bored
+            or really responsible.
             <br />
           </p>
           <div className="mt-8">
@@ -35,8 +35,8 @@ export default function TermsPage() {
               <p className="leading-relaxed">
                 Welcome to our exam preparation platform! We use machine
                 learning to help students predict which questions might appear
-                on their exams. Think of us as your AI-powered study buddy who&apos;s
-                really good at guessing what teachers might ask.
+                on their exams. Think of us as your AI-powered study buddy
+                who&apos;s really good at guessing what teachers might ask.
               </p>
             </section>
 
@@ -47,9 +47,9 @@ export default function TermsPage() {
               <p className="leading-relaxed">
                 Our platform uses artificial intelligence and machine learning
                 algorithms to analyze patterns in exam questions, past papers,
-                and educational content. While we&apos;re pretty smart, we&apos;re not
-                psychic - our predictions are educated guesses based on data
-                analysis, not crystal ball readings.
+                and educational content. While we&apos;re pretty smart,
+                we&apos;re not psychic - our predictions are educated guesses
+                based on data analysis, not crystal ball readings.
               </p>
             </section>
 
@@ -59,11 +59,13 @@ export default function TermsPage() {
               </h3>
               <ul className="list-disc list-inside space-y-2 ml-4">
                 <li>
-                  You&apos;ll use our platform for legitimate study purposes only
+                  You&apos;ll use our platform for legitimate study purposes
+                  only
                 </li>
                 <li>You won&apos;t try to hack, cheat, or break our systems</li>
                 <li>
-                  You&apos;ll provide accurate information when using our services
+                  You&apos;ll provide accurate information when using our
+                  services
                 </li>
                 <li>You won&apos;t share your account with others</li>
                 <li>You understand that our predictions are not guaranteed</li>
@@ -90,8 +92,9 @@ export default function TermsPage() {
               <p className="leading-relaxed">
                 By using our platform, you agree to these terms. We reserve the
                 right to modify these terms at any time. Our predictions are
-                provided &quot;as is&quot; without any warranties. We&apos;re not responsible
-                for your exam results - that&apos;s on you and your studying!
+                provided &quot;as is&quot; without any warranties. We&apos;re
+                not responsible for your exam results - that&apos;s on you and
+                your studying!
               </p>
             </section>
 
@@ -113,8 +116,8 @@ export default function TermsPage() {
               </h3>
               <p className="leading-relaxed">
                 Questions about these terms? Found a bug in our predictions?
-                Want to tell us how awesome we are? Reach out to us - we&apos;d love
-                to hear from you!
+                Want to tell us how awesome we are? Reach out to us - we&apos;d
+                love to hear from you!
               </p>
             </section>
           </div>
