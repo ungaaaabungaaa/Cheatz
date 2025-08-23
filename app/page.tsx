@@ -25,8 +25,8 @@ export default function Home() {
     <section className="flex flex-col items-center justify-center text-center min-h-dvh lg:min-h-screen w-full">
       <div className="flex w-full lg:max-w-5xl flex-col items-center p-4">
         <div className="flex w-full flex-col gap-4">
-          <SparklesText>Exam Sucks</SparklesText>
-          <h1 className="text-2xl lg:text-2xl text-center font-bold mb-2 lg:mb-4">
+          <SparklesText>Exam.Sucks</SparklesText>
+          <h1 className="text-md text-gray-500 lg:text-2xl text-center font-regular mb-2 lg:mb-4">
             {phrase}
           </h1>
           <PromptInputFullLineWithBottomActions />
