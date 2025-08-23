@@ -44,7 +44,7 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden sm:flex gap-2">
-          {/* <ThemeSwitch /> */}
+          <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 

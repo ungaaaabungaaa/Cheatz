@@ -3,44 +3,44 @@
 import React, {useState} from "react";
 import {Button} from "@heroui/button";
 import {Icon} from "@iconify/react";
-
 import {PromptInputFullLineComponent} from "./prompt-input-full-line";
 
 const suggestions = [
   {
-    id: "draft-email",
-    label: "Draft an email",
-    icon: "solar:document-add-outline",
+    id: "leakedPapers",
+    label: "Leaked Paper's",
+    icon: "uiw:stop-o",
+    color: "text-red-500",
   },
   {
-    id: "create-image",
-    label: "Create an image",
-    icon: "solar:gallery-linear",
+    id: "cheatSheets",
+    label: "Cheat Sheet's",
+    icon: "mdi:incognito",
+    color: "text-gray-500",
   },
   {
-    id: "brainstorm",
-    label: "Brainstorm",
-    icon: "solar:lightbulb-linear",
+    id: "assignments",
+    label: "Assignment",
+    icon: "material-symbols:assignment-outline",
+    color: "text-blue-500",
+  }, 
+  {
+    id: "scolarship",
+    label: "Scolarship",
+    icon: "material-symbols:school-outline",
+    color: "text-emerald-500",
   },
   {
-    id: "make-plan",
-    label: "Make a plan",
-    icon: "solar:checklist-linear",
+    id: "projects",
+    label: "projects",
+    icon: "material-symbols:work-outline",
+    color: "text-orange-500",
   },
   {
-    id: "code",
-    label: "Code",
-    icon: "solar:code-linear",
-  },
-  {
-    id: "help-write",
-    label: "Help me write",
-    icon: "solar:pen-2-outline",
-  },
-  {
-    id: "get-advice",
-    label: "Get advice",
-    icon: "solar:square-academic-cap-2-outline",
+    id: "jobs",
+    label: "jobs",
+    icon: "material-symbols:work-outline",
+    color: "text-yellow-500",
   },
 ];
 
@@ -53,17 +53,23 @@ interface PromptSuggestionsProps {
 const PromptSuggestions = ({onSelect}: PromptSuggestionsProps) => {
   return (
     <div className="flex flex-row flex-wrap items-center justify-center gap-2">
-      {suggestions.map((suggestion) => (
-        <Button
-          key={suggestion.id}
-          className="border-1 rounded-full px-4"
-          startContent={<Icon className="text-default-500" icon={suggestion.icon} width={18} />}
-          variant="light"
-          onPress={() => onSelect?.(suggestion)}
-        >
-          {suggestion.label}
-        </Button>
-      ))}
+      {suggestions.map((suggestion) => {
+        // Use Iconify for all icons since we're using Material Symbols consistently
+        const IconComponent = <Icon className={suggestion.color} icon={suggestion.icon} width={18} />;
+
+        return (
+          <Button
+            key={suggestion.id}
+            size="lg"
+            className="border-1 rounded-full lg:px-6 lg:py-2"
+            startContent={IconComponent}
+            variant="light"
+            onPress={() => onSelect?.(suggestion)}
+          >
+            {suggestion.label}
+          </Button>
+        );
+      })}
     </div>
   );
 };
