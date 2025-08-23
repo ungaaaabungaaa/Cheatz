@@ -56,7 +56,7 @@ const PromptSuggestions = ({onSelect}: PromptSuggestionsProps) => {
       {suggestions.map((suggestion) => (
         <Button
           key={suggestion.id}
-          className="border-default-200 text-default-foreground hover:border-default-400 hover:text-foreground data-[hover=true]:border-default-400 data-[hover=true]:text-foreground h-8 gap-2 rounded-full border-1 px-3 transition-colors duration-150!"
+          className="border-1 rounded-full px-4"
           startContent={<Icon className="text-default-500" icon={suggestion.icon} width={18} />}
           variant="light"
           onPress={() => onSelect?.(suggestion)}
