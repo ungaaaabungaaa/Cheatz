@@ -25,6 +25,8 @@ const suggestionLists = {
   ],
   scolarship: [
     "No BullShit Scholarship Links",
+    "Govt Scholarship Links",
+    "Broke Student Aid",
   ],
   projects: [
     "Buy a Ready-Made Project",
@@ -108,7 +110,7 @@ const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
     : [];
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-2 lg:gap-6">
       {/* Buttons Row */}
       <div className="flex flex-row flex-wrap items-center justify-center gap-2">
         {suggestions.map((suggestion) => {
@@ -137,13 +139,13 @@ const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
 
       {/* Single Centered List */}
       {selectedCategory && currentSuggestions.length > 0 && (
-        <div className="flex justify-center">
-          <div className="w-full max-w-full">
-            <div className="py-2">
+        <div className="flex justify-center my-4">
+          <div className="w-[94%] lg:w-full lg:max-w-full">
+            <div className="py-0 lg:py-2">
               {currentSuggestions.map((item, index) => (
-                <div className="py-2" key={index}>
+                <div className="py-1 lg:py-2" key={index}>
                   <button
-                    className="w-full px-4 py-3 text-left text-xl text-gray-700 transition-colors"
+                    className="w-full px-2 lg:px-4 py-1 lg:py-3 text-left text-sm lg:text-xl text-gray-700 transition-colors"
                     onClick={() => handleSuggestionClick(item)}
                   >
                     {item}
@@ -177,7 +179,7 @@ export default function PromptInputFullLineWithBottomActions() {
       </div>
 
       {/* Suggestions Container - Detached */}
-      <div className="flex w-full flex-col gap-2">
+      <div className="flex w-full flex-col lg:gap-2">
         <PromptSuggestions onSelect={handleSuggestionSelect} />
       </div>
     </div>
