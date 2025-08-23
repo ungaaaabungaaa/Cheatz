@@ -19,13 +19,8 @@ export const Navbar = () => {
         inputWrapper: "bg-default-100",
         input: "text-sm",
       }}
-      endContent={
-        <Kbd className="hidden lg:inline-block" keys={["command"]}>
-          F
-        </Kbd>
-      }
       labelPlacement="outside"
-      placeholder="Enter USN or Ask Anything..."
+      placeholder="Enter USN"
       startContent={
         <SearchIcon className="text-base text-default-400 pointer-events-none flex-shrink-0" />
       }
@@ -54,7 +49,7 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
-        <ThemeSwitch />
+      <NavbarItem>{searchInput}</NavbarItem>
       </NavbarContent>
     </HeroUINavbar>
   );

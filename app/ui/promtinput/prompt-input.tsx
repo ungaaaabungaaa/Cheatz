@@ -1,7 +1,6 @@
 "use client";
 
 import type {TextAreaProps} from "@heroui/input";
-
 import React from "react";
 import {Textarea} from "@heroui/input";
 import {cn} from "@/lib/utils";
@@ -19,7 +18,7 @@ const PromptInput = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
           input: cn("py-0", classNames?.input),
         }}
         minRows={1}
-        placeholder="Enter a prompt here"
+        placeholder="Enter Your USN!"
         radius="lg"
         variant="bordered"
         {...props}

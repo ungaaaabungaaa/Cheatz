@@ -1,7 +1,7 @@
 "use client";
 
 import {Icon} from "@iconify/react";
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useState,useEffect} from "react";
 import {Badge} from "@heroui/badge";
 import {Button} from "@heroui/button";
 import {Form} from "@heroui/form";
@@ -10,6 +10,7 @@ import {Tooltip} from "@heroui/tooltip";
 import {VisuallyHidden} from "@react-aria/visually-hidden";
 import {cn} from "@/lib/utils";
 import PromptInput from "./prompt-input";
+
 
 interface PromptInputProps {
   prompt: string;
@@ -56,9 +57,12 @@ const PromptInputAssets = ({assets, onRemoveAsset}: PromptInputAssetsProps) => {
 
 export function PromptInputFullLineComponent({prompt, setPrompt}: PromptInputProps) {
   const [assets, setAssets] = useState<string[]>([]);
+  const [phrase, setPhrase] = useState<string>("");
 
   const inputRef = React.useRef<HTMLTextAreaElement>(null);
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+ 
 
   const handleSubmit = useCallback(() => {
     if (!prompt) return;
@@ -130,6 +134,8 @@ export function PromptInputFullLineComponent({prompt, setPrompt}: PromptInputPro
   }, []);
 
   return (
+    <>
+   
     <Form
       className="rounded-medium bg-default-100 dark:bg-default-100 flex w-full flex-col items-start gap-0"
       validationBehavior="native"
@@ -203,6 +209,7 @@ export function PromptInputFullLineComponent({prompt, setPrompt}: PromptInputPro
         </Button>
       </div>
     </Form>
+    </>
   );
 }
 

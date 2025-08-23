@@ -77,6 +77,7 @@ export default function PromptInputFullLineWithBottomActions() {
 
   return (
     <div className="flex w-full flex-col gap-4">
+      
       <PromptInputFullLineComponent prompt={prompt} setPrompt={setPrompt} />
       <PromptSuggestions onSelect={handleSuggestionSelect} />
     </div>
