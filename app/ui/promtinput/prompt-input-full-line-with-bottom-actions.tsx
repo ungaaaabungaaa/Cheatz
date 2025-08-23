@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import {Button} from "@heroui/button";
 import {Icon} from "@iconify/react";
 import {PromptInputFullLineComponent} from "./prompt-input-full-line";
+import {useRouter} from "next/navigation";
 
 const suggestions = [
   {
@@ -66,7 +67,6 @@ const PromptSuggestions = ({onSelect}: PromptSuggestionsProps) => {
         return (
           <Button
             key={suggestion.id}
-            size="lg"
             className="border-1 rounded-full lg:px-6 lg:py-2"
             startContent={IconComponent}
             variant="light"
@@ -82,11 +82,11 @@ const PromptSuggestions = ({onSelect}: PromptSuggestionsProps) => {
 
 export default function PromptInputFullLineWithBottomActions() {
   const [prompt, setPrompt] = useState("");
-  const [selectedSuggestion, setSelectedSuggestion] = useState<PromptSuggestion | null>(null);
+  const router = useRouter();
 
   const handleSuggestionSelect = (suggestion: PromptSuggestion) => {
-    setSelectedSuggestion(suggestion);
-    setPrompt(`Help me ${suggestion.label.toLowerCase()}`);
+    // Navigate directly to the page without filling the prompt input
+    router.push(suggestion.page);
   };
 
   return (
@@ -98,36 +98,7 @@ export default function PromptInputFullLineWithBottomActions() {
       
       {/* Suggestions Container - Detached */}
       <div className="flex w-full flex-col gap-4">
-        <h3 className="text-center text-lg font-semibold text-foreground">Quick Actions</h3>
         <PromptSuggestions onSelect={handleSuggestionSelect} />
-        
-        {/* Page Navigation Field - Shows when suggestion is selected */}
-        {selectedSuggestion && (
-          <div className="flex flex-col gap-2 rounded-lg border border-default-200 p-4">
-            <div className="flex items-center gap-2">
-              <Icon className={selectedSuggestion.color} icon={selectedSuggestion.icon} width={20} />
-              <span className="font-medium">Selected: {selectedSuggestion.label}</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-default-600">Navigate to:</span>
-              <code className="rounded bg-default-100 px-2 py-1 text-sm font-mono">
-                {selectedSuggestion.page}
-              </code>
-            </div>
-            <Button
-              color="primary"
-              variant="flat"
-              className="mt-2"
-              onPress={() => {
-                // Here you can add navigation logic
-                console.log(`Navigating to: ${selectedSuggestion.page}`);
-                // window.location.href = selectedSuggestion.page;
-              }}
-            >
-              Go to {selectedSuggestion.label}
-            </Button>
-          </div>
-        )}
       </div>
     </div>
   );
