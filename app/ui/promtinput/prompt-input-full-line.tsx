@@ -1,7 +1,7 @@
 "use client";
 
 import { Icon } from "@iconify/react";
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState } from "react";
 import { Badge } from "@heroui/badge";
 import { Button } from "@heroui/button";
 import { Form } from "@heroui/form";
@@ -226,7 +226,7 @@ export function PromptInputFullLineComponent({
                 !prompt ? "text-default-600" : "text-primary-foreground",
               )}
             >
-              Help Me... plz
+              Help Me plz
             </span>
           </Button>
         </div>
