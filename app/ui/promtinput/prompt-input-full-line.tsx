@@ -226,7 +226,7 @@ export function PromptInputFullLineComponent({
                 !prompt ? "text-default-600" : "text-primary-foreground",
               )}
             >
-              I’m Fucke’d
+              Help Me... plz
             </span>
           </Button>
         </div>
