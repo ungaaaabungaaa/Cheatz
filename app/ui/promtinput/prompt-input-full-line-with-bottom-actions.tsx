@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@heroui/button";
 import { Icon } from "@iconify/react";
 import { PromptInputFullLineComponent } from "./prompt-input-full-line";
@@ -90,6 +90,18 @@ interface PromptSuggestionsProps {
 
 const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the md breakpoint
+    };
+    
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+    
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
 
   const handleButtonClick = (suggestion: PromptSuggestion) => {
     if (selectedCategory === suggestion.id) {
@@ -129,7 +141,7 @@ const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
               className={`border-1 rounded-full lg:px-6 lg:py-4 ${isSelected ? "bg-gray-100" : ""}`}
               startContent={IconComponent}
               variant="bordered"
-              size="lg"
+              size={isMobile ? "sm" : "lg"}
               onPress={() => handleButtonClick(suggestion)}
             >
               {suggestion.label}
