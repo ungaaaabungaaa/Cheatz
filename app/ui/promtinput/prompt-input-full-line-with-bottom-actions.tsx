@@ -110,9 +110,9 @@ const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
     : [];
 
   return (
-    <div className="flex flex-col gap-2 lg:gap-6">
+    <div className="lg:mt-2 flex flex-col">
       {/* Buttons Row */}
-      <div className="flex flex-row flex-wrap items-center justify-center gap-2">
+      <div className="flex flex-row flex-wrap items-center justify-center gap-1  lg:gap-3">
         {suggestions.map((suggestion) => {
           const IconComponent = (
             <Icon
@@ -126,9 +126,10 @@ const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
           return (
             <Button
               key={suggestion.id}
-              className={`border-1 rounded-full lg:px-6 lg:py-2 ${isSelected ? "bg-gray-100" : ""}`}
+              className={`border-1 rounded-full lg:px-6 lg:py-4 ${isSelected ? "bg-gray-100" : ""}`}
               startContent={IconComponent}
-              variant="light"
+              variant="bordered"
+              size="lg"
               onPress={() => handleButtonClick(suggestion)}
             >
               {suggestion.label}
