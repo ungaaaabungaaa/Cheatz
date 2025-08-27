@@ -25,7 +25,7 @@ export default function JobsPage() {
       <p className="text-lg lg:text-2xl mb-8">Skip the drama – walk-in Drives, pay the agency for jobs, or crack a test <br></br> Job sorted..</p>
       
       {/* Search Input */}
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-8">
         <div className="relative lg:max-w-4xl w-full">
           <form onSubmit={handleSubmit} className="relative">
             <input
@@ -49,11 +49,11 @@ export default function JobsPage() {
             <TabsTrigger value="ThisMonth">This Month</TabsTrigger>
             <TabsTrigger value="Upcoming">Upcoming</TabsTrigger>
           </TabsList>
-          <TabsContent className="w-full border-2" value="Today">Today Jobs List.</TabsContent>
-          <TabsContent className="w-full border-2" value="Tommorw">Tommorws jobs List.</TabsContent>
-          <TabsContent className="w-full border-2" value="ThisWeek">This Months Job List .</TabsContent>
-          <TabsContent className="w-full border-2" value="ThisMonth">This Months Job List.</TabsContent>
-          <TabsContent className="w-full border-2" value="Upcoming">Upcoming.</TabsContent>
+          <TabsContent className="w-full" value="Today">Today Jobs List.</TabsContent>
+          <TabsContent className="w-full" value="Tommorw">Tommorws jobs List.</TabsContent>
+          <TabsContent className="w-full" value="ThisWeek">This Months Job List .</TabsContent>
+          <TabsContent className="w-full" value="ThisMonth">This Months Job List.</TabsContent>
+          <TabsContent className="w-full" value="Upcoming">Upcoming.</TabsContent>
         </Tabs>
       </div>
     </div>
