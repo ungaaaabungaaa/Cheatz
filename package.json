@@ -26,6 +26,7 @@
     "@heroui/system": "2.4.20",
     "@heroui/theme": "2.4.20",
     "@iconify/react": "^6.0.0",
+    "@radix-ui/react-tabs": "^1.1.13",
     "@react-aria/ssr": "3.9.10",
     "@react-aria/visually-hidden": "3.8.26",
     "ai": "^5.0.22",
