@@ -138,7 +138,14 @@ const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
           return (
             <Button
               key={suggestion.id}
-              className={`border-1 rounded-full lg:px-6 lg:py-4 ${isSelected ? "bg-gray-100" : ""}`}
+              className={`
+                border rounded-full lg:px-6 lg:py-4
+                transition-colors
+                ${isSelected 
+                  ? "bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100" 
+                  : "bg-transparent text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                }
+              `}
               startContent={IconComponent}
               variant="bordered"
               size={isMobile ? "sm" : "lg"}
@@ -158,7 +165,7 @@ const PromptSuggestions = ({ onSelect }: PromptSuggestionsProps) => {
               {currentSuggestions.map((item, index) => (
                 <div className="py-1 lg:py-2" key={index}>
                   <button
-                    className="w-full px-2 lg:px-4 py-1 lg:py-3 text-left text-sm lg:text-xl text-gray-700 transition-colors"
+                    className="w-full px-2 lg:px-4 py-1 lg:py-3 text-left text-sm lg:text-xl text-gray-700 dark:text-gray-300 transition-colors"
                     onClick={() => handleSuggestionClick(item)}
                   >
                     {item}
