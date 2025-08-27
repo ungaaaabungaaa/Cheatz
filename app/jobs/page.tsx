@@ -21,7 +21,7 @@ export default function JobsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 text-center">
-      <h1 className="text-4xl lg:text-6xl font-bold text-center mb-2 lg:mb-4">No Jobs</h1>
+      <h1 className="text-4xl lg:text-6xl font-bold text-center mb-2 lg:mb-4">No Job$</h1>
       <p className="text-lg lg:text-2xl mb-8">Skip the drama – walk-in Drives, pay the agency for jobs, or crack a test <br></br> Job sorted..</p>
       
       {/* Search Input */}
@@ -47,7 +47,6 @@ export default function JobsPage() {
             <TabsTrigger value="Tommorw">Tommorw</TabsTrigger>
             <TabsTrigger value="ThisWeek">This Week</TabsTrigger>
             <TabsTrigger value="ThisMonth">This Month</TabsTrigger>
-            <TabsTrigger value="Upcoming">Upcoming</TabsTrigger>
           </TabsList>
           <TabsContent className="w-full" value="Today">Today Jobs List.</TabsContent>
           <TabsContent className="w-full" value="Tommorw">Tommorws jobs List.</TabsContent>
