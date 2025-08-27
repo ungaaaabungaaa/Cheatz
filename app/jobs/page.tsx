@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function JobsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -21,9 +21,14 @@ export default function JobsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 text-center">
-      <h1 className="text-4xl lg:text-6xl font-bold text-center mb-2 lg:mb-4">No Job$</h1>
-      <p className="text-lg lg:text-2xl mb-8">Skip the drama – walk-in Drives, pay the agency for jobs, or crack a test <br></br> Job sorted..</p>
-      
+      <h1 className="text-4xl lg:text-6xl font-bold text-center mb-2 lg:mb-4">
+        No Job$
+      </h1>
+      <p className="text-lg lg:text-2xl mb-8">
+        Skip the drama – walk-in Drives, pay the agency for jobs, or crack a
+        test <br></br> Job sorted..
+      </p>
+
       {/* Search Input */}
       <div className="flex justify-center mb-8">
         <div className="relative lg:max-w-4xl w-full">
@@ -41,18 +46,54 @@ export default function JobsPage() {
         </div>
       </div>
       <div className="flex justify-center  w-full">
-        <Tabs defaultValue="Today" className="bg-transparent lg:max-w-4xl w-full">
+        <Tabs
+          defaultValue="Today"
+          className="bg-transparent lg:max-w-4xl w-full"
+        >
           <TabsList className="w-auto lg:w-3/4 justify-start mb-8">
             <TabsTrigger value="Today">Today</TabsTrigger>
             <TabsTrigger value="Tommorw">Tommorw</TabsTrigger>
             <TabsTrigger value="ThisWeek">This Week</TabsTrigger>
             <TabsTrigger value="ThisMonth">This Month</TabsTrigger>
           </TabsList>
-          <TabsContent className="w-full" value="Today">Today Jobs List.</TabsContent>
-          <TabsContent className="w-full" value="Tommorw">Tommorws jobs List.</TabsContent>
-          <TabsContent className="w-full" value="ThisWeek">This Months Job List .</TabsContent>
-          <TabsContent className="w-full" value="ThisMonth">This Months Job List.</TabsContent>
-          <TabsContent className="w-full" value="Upcoming">Upcoming.</TabsContent>
+          <TabsContent className="w-full" value="Today">
+            <div className="text-start w-full border-none h-auto py-1">
+              <h1 className="text-2xl font-bold">Walk in Drives.</h1>
+              <p className="text-md">
+                Resume ready macha, straight walk-in da — drive scene lit!
+              </p>
+            </div>
+          </TabsContent>
+
+          <TabsContent className="w-full" value="Tommorw">
+            <div className="text-start w-full border-none h-auto py-1">
+              <h1 className="text-2xl font-bold">Tommorw Walk in Drives.</h1>
+              <p className="text-md">
+                Tomorrow mass entry da — gear up your CV, don’t come late!
+              </p>
+            </div>
+          </TabsContent>
+
+          <TabsContent className="w-full" value="ThisWeek">
+            <div className="text-start w-full border-none h-auto py-1">
+              <h1 className="text-2xl font-bold">This Week Walk in Drives.</h1>
+              <p className="text-md">
+                Full week scene strong, screenshot podu macha, be on track!
+              </p>
+            </div>
+          </TabsContent>
+
+          <TabsContent className="w-full" value="ThisMonth">
+            <div className="text-start w-full border-none h-auto py-1">
+              <h1 className="text-2xl font-bold">
+                Whole Month Just Walkin Drives.
+              </h1>
+              <p className="text-md">
+                Month-long thiruvizha da — CV ku local flavor kuduthu stand out
+                panra!
+              </p>
+            </div>
+          </TabsContent>
         </Tabs>
       </div>
     </div>
