@@ -7,7 +7,7 @@ import { Button } from "@heroui/button";
 import { Form } from "@heroui/form";
 import { Image } from "@heroui/image";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
-import { AudioLines } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 import PromptInput from "./prompt-input";
 
@@ -26,6 +26,49 @@ const PromptInputAssets = ({
   onRemoveAsset,
 }: PromptInputAssetsProps) => {
   if (assets.length === 0) return null;
+
+  const getFileType = (base64Data: string) => {
+    if (base64Data.startsWith("data:image/")) return "image";
+    if (base64Data.startsWith("data:application/pdf")) return "pdf";
+    if (base64Data.startsWith("data:application/vnd.openxmlformats-officedocument.presentationml.presentation")) return "pptx";
+    return "unknown";
+  };
+
+  const renderAsset = (asset: string, index: number) => {
+    const fileType = getFileType(asset);
+    
+    if (fileType === "image") {
+      return (
+        <Image
+          alt="uploaded image"
+          className="rounded-small border-small border-default-200/50 h-14 w-14 object-cover"
+          src={asset}
+        />
+      );
+    } else if (fileType === "pdf") {
+      return (
+        <div className="rounded-small border-small border-default-200/50 h-14 w-14 flex items-center justify-center bg-red-50 dark:bg-red-900/20">
+          <Icon
+            className="text-red-600 dark:text-red-400"
+            icon="vscode-icons:file-type-pdf2"
+            width={24}
+          />
+        </div>
+      );
+    } else if (fileType === "pptx") {
+      return (
+        <div className="rounded-small border-small border-default-200/50 h-14 w-14 flex items-center justify-center bg-orange-50 dark:bg-orange-900/20">
+          <Icon
+            className="text-orange-600 dark:text-orange-400"
+            icon="vscode-icons:file-type-powerpoint"
+            width={24}
+          />
+        </div>
+      );
+    }
+    
+    return null;
+  };
 
   return (
     <>
@@ -50,11 +93,7 @@ const PromptInputAssets = ({
             </Button>
           }
         >
-          <Image
-            alt="uploaded image"
-            className="rounded-small border-small border-default-200/50 h-14 w-14 object-cover"
-            src={asset}
-          />
+          {renderAsset(asset, index)}
         </Badge>
       ))}
     </>
@@ -101,7 +140,12 @@ export function PromptInputFullLineComponent({
     const items = Array.from(e.clipboardData.items);
 
     for (const item of items) {
-      if (item.type.indexOf("image") !== -1) {
+      // Check if item is image, PDF, or PPTX
+      const isImage = item.type.indexOf("image") !== -1;
+      const isPDF = item.type === "application/pdf";
+      const isPPTX = item.type === "application/vnd.openxmlformats-officedocument.presentationml.presentation";
+
+      if (isImage || isPDF || isPPTX) {
         const blob = item.getAsFile();
 
         if (!blob) continue;
@@ -123,7 +167,12 @@ export function PromptInputFullLineComponent({
       const files = Array.from(e.target.files || []);
 
       files.forEach((file) => {
-        if (file.type.startsWith("image/")) {
+        // Check if file is image, PDF, or PPTX
+        const isImage = file.type.startsWith("image/");
+        const isPDF = file.type === "application/pdf";
+        const isPPTX = file.type === "application/vnd.openxmlformats-officedocument.presentationml.presentation";
+
+        if (isImage || isPDF || isPPTX) {
           const reader = new FileReader();
 
           reader.onload = () => {
@@ -199,7 +248,7 @@ export function PromptInputFullLineComponent({
               <input
                 ref={fileInputRef}
                 multiple
-                accept="image/*"
+                accept="image/*,.pdf,.pptx"
                 type="file"
                 onChange={handleFileUpload}
               />
@@ -208,26 +257,18 @@ export function PromptInputFullLineComponent({
           <Button
             color={!prompt ? "default" : "primary"}
             isDisabled={!prompt}
+            isIconOnly
             radius="full"
             size="sm"
             type="submit"
             variant="solid"
-            className="py-1"
           >
-            <AudioLines
+            <ArrowUp
               className={cn(
                 "w-4 h-4",
                 !prompt ? "text-default-600" : "text-primary-foreground",
               )}
             />
-            <span
-              className={cn(
-                "text-sm ml-1",
-                !prompt ? "text-default-600" : "text-primary-foreground",
-              )}
-            >
-              Am Fucke’d
-            </span>
           </Button>
         </div>
       </Form>

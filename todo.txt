@@ -1,3 +1,2 @@
-1.Add Drop down on the clicks like FAQ
 2.Chatinterface
 3.Convex
