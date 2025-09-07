@@ -101,10 +101,17 @@ export default function RootLayout({
               menuAriaLabel="Toggle navigation"
               menuBg="#ffffff"
               menuContentColor="#111111"
-              useFixedPosition={false}
+              useFixedPosition={true}
               animationEase="back.out(1.5)"
               animationDuration={0.5}
               staggerDelay={0.12}
+              style={{ 
+                position: 'fixed',
+                top: '2rem',
+                right: '2rem',
+                left: 'auto',
+                zIndex: 1000
+              }}
             />
             <main className="container mx-auto max-w-full lg:max-w-7xl lg:pt-16 lg:px-6">
               {children}
