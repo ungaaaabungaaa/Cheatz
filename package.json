@@ -34,6 +34,7 @@
     "clsx": "^2.1.1",
     "convex": "^1.26.1",
     "framer-motion": "11.18.2",
+    "gsap": "^3.13.0",
     "intl-messageformat": "10.7.16",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.541.0",

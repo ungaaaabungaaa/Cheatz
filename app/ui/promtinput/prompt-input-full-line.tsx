@@ -259,13 +259,12 @@ export function PromptInputFullLineComponent({
             isDisabled={!prompt}
             isIconOnly
             radius="full"
-            size="sm"
             type="submit"
             variant="solid"
           >
             <ArrowUp
               className={cn(
-                "w-4 h-4",
+                "w-6 h-6",
                 !prompt ? "text-default-600" : "text-primary-foreground",
               )}
             />

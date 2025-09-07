@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
+import BubbleMenu from "@/components/BubbleMenu";
 
 export const metadata: Metadata = {
   title: {
@@ -59,6 +60,52 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="relative flex flex-col h-full lg:max-h-dvh lg:h-screen">
+            <BubbleMenu
+              items={[
+                {
+                  label: 'Assignments ?',
+                  href: '/assignments',
+                  ariaLabel: 'Assignments',
+                  rotation: -8,
+                  hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
+                },
+                {
+                  label: 'Cheats',
+                  href: '/cheat',
+                  ariaLabel: 'Cheat Sheets',
+                  rotation: 8,
+                  hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
+                },
+                {
+                  label: 'No job?',
+                  href: '/jobs',
+                  ariaLabel: 'Jobs',
+                  rotation: 8,
+                  hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
+                },
+                {
+                  label: 'Leaked Papers',
+                  href: '/leaked',
+                  ariaLabel: 'Leaked Papers',
+                  rotation: 8,
+                  hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
+                },
+                {
+                  label: 'Projects',
+                  href: '/projects',
+                  ariaLabel: 'Projects',
+                  rotation: -8,
+                  hoverStyles: { bgColor: '#8b5cf6', textColor: '#ffffff' }
+                }
+              ]}
+              menuAriaLabel="Toggle navigation"
+              menuBg="#ffffff"
+              menuContentColor="#111111"
+              useFixedPosition={false}
+              animationEase="back.out(1.5)"
+              animationDuration={0.5}
+              staggerDelay={0.12}
+            />
             <main className="container mx-auto max-w-full lg:max-w-7xl lg:pt-16 lg:px-6">
               {children}
             </main>
