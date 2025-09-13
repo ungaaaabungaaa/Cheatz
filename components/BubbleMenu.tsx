@@ -75,8 +75,8 @@ export default function BubbleMenu({
   className,
   style,
   menuAriaLabel = 'Toggle menu',
-  menuBg = '#fff',
-  menuContentColor = '#111',
+  menuBg,
+  menuContentColor,
   useFixedPosition = false,
   items,
   animationEase = 'back.out(1.5)',
@@ -188,10 +188,10 @@ export default function BubbleMenu({
           onClick={handleToggle}
           aria-label={menuAriaLabel}
           aria-pressed={isMenuOpen}
-          style={{ background: menuBg }}
+          style={{ background: menuBg || 'var(--card)' }}
         >
-          <span className="menu-line" style={{ background: menuContentColor }} />
-          <span className="menu-line short" style={{ background: menuContentColor }} />
+          <span className="menu-line" style={{ background: menuContentColor || 'var(--foreground)' }} />
+          <span className="menu-line short" style={{ background: menuContentColor || 'var(--foreground)' }} />
         </button>
       </nav>
       {showOverlay && (
@@ -211,10 +211,10 @@ export default function BubbleMenu({
                   style={
                     {
                       '--item-rot': `${item.rotation ?? 0}deg`,
-                      '--pill-bg': menuBg,
-                      '--pill-color': menuContentColor,
-                      '--hover-bg': item.hoverStyles?.bgColor || '#f3f4f6',
-                      '--hover-color': item.hoverStyles?.textColor || menuContentColor
+                      '--pill-bg': menuBg || 'var(--card)',
+                      '--pill-color': menuContentColor || 'var(--foreground)',
+                      '--hover-bg': item.hoverStyles?.bgColor || 'var(--accent)',
+                      '--hover-color': item.hoverStyles?.textColor || menuContentColor || 'var(--foreground)'
                     } as CSSProperties
                   }
                   ref={el => {

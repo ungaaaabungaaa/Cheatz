@@ -31,8 +31,8 @@
   width: var(--bubble-size);
   height: var(--bubble-size);
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  background: var(--card, #fff);
+  box-shadow: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +84,7 @@
 
 .bubble-menu .menu-btn {
   border: none;
-  background: #fff;
+  background: var(--card, #fff);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@
 .bubble-menu .menu-line {
   width: 26px;
   height: 2px;
-  background: #111;
+  background: var(--foreground, #111);
   border-radius: 2px;
   display: block;
   margin: 0 auto;
@@ -219,13 +219,13 @@
 }
 
 .bubble-menu-items .pill-link {
-  --pill-bg: #ffffff;
-  --pill-color: #111;
+  --pill-bg: var(--card, #ffffff);
+  --pill-color: var(--foreground, #000);
   --pill-border: rgba(0, 0, 0, 0.12);
   --item-rot: 0deg;
   --pill-min-h: 160px;
-  --hover-bg: #f3f4f6;
-  --hover-color: #111;
+  --hover-bg: var(--accent, #f3f4f6);
+  --hover-color: var(--foreground, #000);
   width: 100%;
   min-height: var(--pill-min-h);
   padding: clamp(1.5rem, 3vw, 8rem) 0;
@@ -236,7 +236,7 @@
   background: var(--pill-bg);
   color: var(--pill-color);
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;

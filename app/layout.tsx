@@ -54,7 +54,7 @@ export default function RootLayout({
       </head>
       <body
         className={clsx(
-          "min-h-screen text-foreground bg-background font-sans antialiased",
+          "min-h-screen text-foreground bg-transparent font-sans antialiased",
           fontSans.variable,
         )}
       >
@@ -99,8 +99,6 @@ export default function RootLayout({
                 }
               ]}
               menuAriaLabel="Toggle navigation"
-              menuBg="#ffffff"
-              menuContentColor="#111111"
               useFixedPosition={true}
               animationEase="back.out(1.5)"
               animationDuration={0.5}
