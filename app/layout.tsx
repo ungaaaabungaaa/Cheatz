@@ -63,14 +63,14 @@ export default function RootLayout({
             <BubbleMenu
               items={[
                 {
-                  label: 'Assignments ?',
+                  label: '@ssignments ?',
                   href: '/assignments',
                   ariaLabel: 'Assignments',
                   rotation: -8,
                   hoverStyles: { bgColor: '#3b82f6', textColor: '#ffffff' }
                 },
                 {
-                  label: 'Cheats',
+                  label: 'Che@ts',
                   href: '/cheat',
                   ariaLabel: 'Cheat Sheets',
                   rotation: 8,
@@ -84,14 +84,14 @@ export default function RootLayout({
                   hoverStyles: { bgColor: '#f59e0b', textColor: '#ffffff' }
                 },
                 {
-                  label: 'Leaked Papers',
+                  label: 'Le@ked Paper$',
                   href: '/leaked',
                   ariaLabel: 'Leaked Papers',
                   rotation: 8,
                   hoverStyles: { bgColor: '#ef4444', textColor: '#ffffff' }
                 },
                 {
-                  label: 'Projects',
+                  label: 'Project$',
                   href: '/projects',
                   ariaLabel: 'Projects',
                   rotation: -8,
