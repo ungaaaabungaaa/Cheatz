@@ -63,7 +63,7 @@ export default function RootLayout({
             <BubbleMenu
               items={[
                 {
-                  label: '@ssignments ?',
+                  label: 'Assignment$ ?',
                   href: '/assignments',
                   ariaLabel: 'Assignments',
                   rotation: -8,
