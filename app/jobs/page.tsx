@@ -118,6 +118,7 @@ export default function JobsPage() {
             <div className="text-start py-1">
             <h1 className="md:text-3xl text-2xl font-bold">Job Agencies</h1>
             <p className="text-md text-muted-foreground my-2">Skip the noise. These are the firms that hustle to land you work.</p>
+            {/* TODO: Add job top 6 agencies */}
             </div>
           </TabsContent>
 
