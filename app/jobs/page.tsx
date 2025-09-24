@@ -45,57 +45,44 @@ export default function JobsPage() {
           </form>
         </div>
       </div>
-      <div className="flex justify-center  w-full">
-        <Tabs
-          defaultValue="Today"
-          className="bg-transparent lg:max-w-4xl w-full"
-        >
-          <TabsList className="w-auto lg:w-3/4 justify-start mb-8">
-            <TabsTrigger value="Today">Today</TabsTrigger>
-            <TabsTrigger value="Tommorw">Tommorw</TabsTrigger>
-            <TabsTrigger value="ThisWeek">This Week</TabsTrigger>
-            <TabsTrigger value="ThisMonth">This Month</TabsTrigger>
-          </TabsList>
-          <TabsContent className="w-full" value="Today">
-            <div className="text-start w-full border-none h-auto py-1">
-              <h1 className="text-2xl font-bold">Walk in Drives.</h1>
-              <p className="text-md">
-                Resume ready macha, straight walk-in da — drive scene lit!
-              </p>
-            </div>
-          </TabsContent>
+      <section className="flex justify-center w-full">
+      <Tabs defaultValue="Today" className="bg-transparent lg:max-w-4xl w-full">
+  <TabsList className="w-auto lg:w-3/4 justify-start mb-8">
+    <TabsTrigger value="Today">Today</TabsTrigger>
+    <TabsTrigger value="Tomorrow">Tomorrow</TabsTrigger>
+    <TabsTrigger value="ThisWeek">This Week</TabsTrigger>
+    <TabsTrigger value="ThisMonth">This Month</TabsTrigger>
+  </TabsList>
 
-          <TabsContent className="w-full" value="Tommorw">
-            <div className="text-start w-full border-none h-auto py-1">
-              <h1 className="text-2xl font-bold">Tommorw Walk in Drives.</h1>
-              <p className="text-md">
-                Tomorrow mass entry da — gear up your CV, don’t come late!
-              </p>
-            </div>
-          </TabsContent>
+  <TabsContent className="w-full" value="Today">
+    <div className="text-start py-1">
+      <h1 className="md:text-3xl text-2xl font-bold">Today’s Walk-in Drives</h1>
+      <p className="text-md text-muted-foreground my-2">Happening now — don’t miss out!</p>
+    </div>
+  </TabsContent>
 
-          <TabsContent className="w-full" value="ThisWeek">
-            <div className="text-start w-full border-none h-auto py-1">
-              <h1 className="text-2xl font-bold">This Week Walk in Drives.</h1>
-              <p className="text-md">
-                Full week scene strong, screenshot podu macha, be on track!
-              </p>
-            </div>
-          </TabsContent>
+  <TabsContent className="w-full" value="Tomorrow">
+    <div className="text-start py-1">
+      <h1 className="md:text-3xl text-2xl font-bold">Tomorrow’s Walk-in Drives</h1>
+      <p className="text-md text-muted-foreground my-2">Get ready — your chance is tomorrow.</p>
+    </div>
+  </TabsContent>
 
-          <TabsContent className="w-full" value="ThisMonth">
-            <div className="text-start w-full border-none h-auto py-1">
-              <h1 className="text-2xl font-bold">
-                Whole Month Just Walkin Drives.
-              </h1>
-              <p className="text-md">
-                Month-long thiruvizha da — CV ku local flavor kuduthu stand out
-                panra!
-              </p>
-            </div>
-          </TabsContent>
-        </Tabs>
-      </div>
+  <TabsContent className="w-full" value="ThisWeek">
+    <div className="text-start py-1">
+      <h1 className="md:text-3xl text-2xl font-bold">This Week’s Walk-in Drives</h1>
+      <p className="text-md text-muted-foreground my-2">Plan ahead — stay on track this week.</p>
+    </div>
+  </TabsContent>
+
+  <TabsContent className="w-full" value="ThisMonth">
+    <div className="text-start py-1">
+      <h1 className="md:text-3xl text-2xl font-bold">This Month’s Walk-in Drives</h1>
+      <p className="text-md text-muted-foreground my-2">All opportunities lined up for the month.</p>
+    </div>
+  </TabsContent>
+      </Tabs>
+      </section>
     </div>
   );
 }

@@ -9,7 +9,7 @@ export default function ChatPage() {
         implemented.
       </p>
       
-      <div className="space-y-4">
+      <section className="space-y-4">
         <h2 className="text-lg font-semibold">Test Chat Slugs</h2>
         <div className="grid grid-cols-2 gap-4">
           <Link 
@@ -44,7 +44,12 @@ export default function ChatPage() {
             <p className="text-sm text-muted-foreground">/chat/my-awesome-chat</p>
           </Link>
         </div>
-      </div>
+      </section>
+
+     
+
+
+
     </div>
   );
 }
