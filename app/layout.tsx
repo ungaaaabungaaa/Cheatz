@@ -71,7 +71,7 @@ export default function RootLayout({
                 },
                 {
                   label: 'Che@ts',
-                  href: '/cheat',
+                  href: '/cheats',
                   ariaLabel: 'Cheat Sheets',
                   rotation: 8,
                   hoverStyles: { bgColor: '#10b981', textColor: '#ffffff' }
