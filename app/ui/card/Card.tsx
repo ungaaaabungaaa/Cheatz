@@ -18,12 +18,12 @@ export default function Card({ title, description, url, imageUrl, link, children
     };
 
     const CardContent = () => (
-        <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 border border-gray-100 p-4">
+        <div className="bg-white rounded-lg  duration-200 border border-gray-100 p-4">
             <div className="flex items-center gap-4">
                 {/* Circular Image/Avatar Section */}
                 {imageUrl && (
                     <div className="flex-shrink-0">
-                        <div className="relative w-24 h-24 rounded-full overflow-hidden bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400">
+                        <div className="relative w-20 h-20 md:w-22 md:h-22 lg:w-24 lg:h-24 rounded-full overflow-hidden bg-gradient-to-br from-purple-400 via-pink-400 to-blue-400">
                             <Image
                                 src={imageUrl}
                                 alt={title || 'Card image'}
