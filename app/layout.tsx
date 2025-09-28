@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import BubbleMenu from "@/components/BubbleMenu";
+import { ConditionalSidebarLayout } from "@/components/conditional-sidebar-layout";
 
 export const metadata: Metadata = {
   title: {
@@ -108,9 +109,9 @@ export default function RootLayout({
                 zIndex: 1000
               }}
             />
-            <main className="container mx-auto max-w-full lg:max-w-7xl lg:pt-16 lg:px-6">
+            <ConditionalSidebarLayout>
               {children}
-            </main>
+            </ConditionalSidebarLayout>
           </div>
         </Providers>
       </body>
