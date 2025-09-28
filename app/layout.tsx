@@ -19,10 +19,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
-  ],
+  themeColor: "white", // Always use white theme color
 };
 
 export default function RootLayout({
@@ -54,7 +51,7 @@ export default function RootLayout({
       </head>
       <body
         className={clsx(
-          "min-h-screen text-foreground bg-transparent font-sans antialiased",
+          "min-h-screen text-foreground bg-white font-sans antialiased",
           fontSans.variable,
         )}
       >

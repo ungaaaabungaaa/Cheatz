@@ -23,9 +23,19 @@ declare module "@react-types/shared" {
 export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
 
+  // Force light theme only - override any theme props
+  const forcedLightThemeProps = {
+    ...themeProps,
+    attribute: "class",
+    defaultTheme: "light",
+    forcedTheme: "light", // This forces the theme to always be light
+    enableSystem: false, // Disable system theme detection
+    enableColorScheme: false, // Disable color scheme changes
+  };
+
   return (
     <HeroUIProvider navigate={router.push}>
-      <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+      <NextThemesProvider {...forcedLightThemeProps}>{children}</NextThemesProvider>
     </HeroUIProvider>
   );
 }

@@ -15,7 +15,7 @@ const config = {
       },
     },
   },
-  darkMode: "class",
+  // darkMode disabled - site is always light mode
   plugins: [heroui()],
 };
 
