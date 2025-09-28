@@ -3,138 +3,123 @@ import { SearchForm } from "@/components/search-form";
 
 import {
   Sidebar,
+  SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
 } from "@/components/ui/sidebar"
 import { SidebarOptInForm } from "./sidebar-opt-in-form"
+import { NavMain } from "./collapsible"
+import {
+  AudioWaveform,
+  BookOpen,
+  Bot,
+  Command,
+  Frame,
+  GalleryVerticalEnd,
+  Map,
+  PieChart,
+  Settings2,
+  SquareTerminal,
+  Briefcase,
+  FileText,
+  GraduationCap,
+  Heart,
+  Eye,
+  Ban,
+  Gamepad2,
+  FolderOpen,
+  HatGlasses,
+  HandHelping,
+  Gem
+} from "lucide-react"
 
-// This is sample data.
+// Navigation data for the sidebar
 const data = {
-  versions: ["1.0.1", "1.1.0-alpha", "2.0.0-beta1"],
   navMain: [
+
     {
-      title: "Getting Started",
-      url: "#",
+      title: "Cheats",
+      url: "/Cheats",
+      icon: Ban,
       items: [
         {
-          title: "Installation",
-          url: "#",
+          title: "Cheat Sheet's",
+          url: "/leaked",
         },
         {
-          title: "Project Structure",
-          url: "#",
+          title: "Model Question's",
+          url: "/leaked",
+        },
+        {
+          title: "important Question's",
+          url: "/leaked",
+        },
+        {
+          title: "Teacher Question's",
+          url: "/leaked",
+        },
+
+      ],
+    },
+    {
+      title: "Jobs",
+      url: "/jobs",
+      icon: Briefcase,
+      items: [
+        {
+          title: "Walk In Drive's",
+          url: "/jobs",
+        },
+        {
+          title: "Job Agency",
+          url: "/jobs",
         },
       ],
     },
     {
-      title: "Building Your Application",
-      url: "#",
+      title: "Assignments",
+      url: "/assignments",
+      icon: FileText,
       items: [
         {
-          title: "Routing",
-          url: "#",
+          title: "Assignment Shop's",
+          url: "/assignments",
         },
         {
-          title: "Data Fetching",
-          url: "#",
-          isActive: true,
-        },
-        {
-          title: "Rendering",
-          url: "#",
-        },
-        {
-          title: "Caching",
-          url: "#",
-        },
-        {
-          title: "Styling",
-          url: "#",
-        },
-        {
-          title: "Optimizing",
-          url: "#",
-        },
-        {
-          title: "Configuring",
-          url: "#",
-        },
-        {
-          title: "Testing",
-          url: "#",
-        },
-        {
-          title: "Authentication",
-          url: "#",
-        },
-        {
-          title: "Deploying",
-          url: "#",
-        },
-        {
-          title: "Upgrading",
-          url: "#",
-        },
-        {
-          title: "Examples",
-          url: "#",
+          title: "Student's",
+          url: "/assignments",
         },
       ],
     },
     {
-      title: "API Reference",
-      url: "#",
+      title: "Scholarship",
+      url: "/scholarship",
+      icon: GraduationCap,
       items: [
         {
-          title: "Components",
-          url: "#",
+          title: "One Click Apply",
+          url: "/scholarship",
         },
         {
-          title: "File Conventions",
-          url: "#",
-        },
-        {
-          title: "Functions",
-          url: "#",
-        },
-        {
-          title: "next.config.js Options",
-          url: "#",
-        },
-        {
-          title: "CLI",
-          url: "#",
-        },
-        {
-          title: "Edge Runtime",
-          url: "#",
+          title: "CyberCenter's",
+          url: "/scholarship/applications",
         },
       ],
     },
+   
     {
-      title: "Architecture",
-      url: "#",
+      title: "Projects",
+      url: "/projects",
+      icon: FolderOpen,
       items: [
         {
-          title: "Accessibility",
-          url: "#",
+          title: "Buy Project's",
+          url: "/projects",
         },
         {
-          title: "Fast Refresh",
-          url: "#",
-        },
-        {
-          title: "Next.js Compiler",
-          url: "#",
-        },
-        {
-          title: "Supported Browsers",
-          url: "#",
-        },
-        {
-          title: "Turbopack",
-          url: "#",
+          title: "Get It From Student's",
+          url: "/projects",
         },
       ],
     },
@@ -147,25 +132,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <SearchForm />
       </SidebarHeader>
-      {/* <SidebarContent>
-        
-        {data.navMain.map((item) => (
-          <SidebarGroup key={item.title}>
-            <SidebarGroupLabel>{item.title}</SidebarGroupLabel>
-            <SidebarGroupContent>
-              <SidebarMenu>
-                {item.items.map((item) => (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild isActive={item.isActive}>
-                      <a href={item.url}>{item.title}</a>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ))}
-      </SidebarContent> */}
+      <SidebarContent>
+        <NavMain items={data.navMain} />
+      </SidebarContent>
       <SidebarFooter>
         <div className="p-1">
           <SidebarOptInForm />
