@@ -24,9 +24,9 @@ export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
 
   // Force light theme only - override any theme props
-  const forcedLightThemeProps = {
+  const forcedLightThemeProps: ThemeProviderProps = {
     ...themeProps,
-    attribute: "class",
+    attribute: "class" as const,
     defaultTheme: "light",
     forcedTheme: "light", // This forces the theme to always be light
     enableSystem: false, // Disable system theme detection
