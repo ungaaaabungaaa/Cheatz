@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import BubbleMenu from "@/components/BubbleMenu";
 import { ConditionalSidebarLayout } from "@/components/conditional-sidebar-layout";
+import { ConvexClientProvider } from "./providers/ConvexClientProvider";
 
 export const metadata: Metadata = {
   title: {
@@ -109,9 +110,11 @@ export default function RootLayout({
                 zIndex: 1000
               }}
             />
+            <ConvexClientProvider>
             <ConditionalSidebarLayout>
               {children}
             </ConditionalSidebarLayout>
+            </ConvexClientProvider>
           </div>
         </Providers>
       </body>

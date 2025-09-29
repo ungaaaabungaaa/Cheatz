@@ -9,6 +9,7 @@
  */
 
 import type * as agent from "../agent.js";
+import type * as party_party from "../party/party.js";
 
 import type {
   ApiFromModules,
@@ -26,6 +27,7 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   agent: typeof agent;
+  "party/party": typeof party_party;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
 
