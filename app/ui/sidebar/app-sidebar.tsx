@@ -39,7 +39,7 @@ const data = {
   navMain: [
 
     {
-      title: "Cheats",
+      title: "Cheat Sheet's",
       url: "/Cheats",
       icon: Ban,
       items: [
@@ -63,7 +63,7 @@ const data = {
       ],
     },
     {
-      title: "Jobs",
+      title: "No Job?",
       url: "/jobs",
       icon: Briefcase,
       items: [
@@ -78,7 +78,7 @@ const data = {
       ],
     },
     {
-      title: "Assignments",
+      title: "Someone To Write My Assignment",
       url: "/assignments",
       icon: FileText,
       items: [
@@ -93,7 +93,7 @@ const data = {
       ],
     },
     {
-      title: "Scholarship",
+      title: "One Click Scholarship",
       url: "/scholarship",
       icon: GraduationCap,
       items: [
@@ -103,13 +103,13 @@ const data = {
         },
         {
           title: "CyberCenter's",
-          url: "/scholarship/applications",
+          url: "/scholarship",
         },
       ],
     },
    
     {
-      title: "Projects",
+      title: "Buy Project's",
       url: "/projects",
       icon: FolderOpen,
       items: [
