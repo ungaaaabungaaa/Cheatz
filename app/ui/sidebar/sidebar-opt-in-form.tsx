@@ -40,7 +40,8 @@ export function SidebarOptInForm() {
       await addPartyMember({ phoneNumber });
       setIsSubmitted(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to join the party. Please try again.");
+      const errorMessage = err instanceof Error ? err.message : "Failed to join the party. Please try again.";
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }

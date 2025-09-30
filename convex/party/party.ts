@@ -20,7 +20,7 @@ export const addPartyMember = mutation({
       .first();
     
     if (existingMember) {
-      throw new Error("Phone number already registered for the party!");
+      throw new Error("Already registered");
     }
     
     // Insert new party member

@@ -78,7 +78,7 @@ const data = {
       ],
     },
     {
-      title: "Someone To Write My Assignment",
+      title: "Help With Assignement's",
       url: "/assignments",
       icon: FileText,
       items: [
